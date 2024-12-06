@@ -25,3 +25,7 @@ A repository for managing and deploying personal configuration files using GNU S
    ```bash
    ./stow.sh
    ```
+
+## Available Configs
+
+- **zsh**: Zsh shell configuration files
