@@ -29,3 +29,4 @@ A repository for managing and deploying personal configuration files using GNU S
 ## Available Configs
 
 - **zsh**: Zsh shell configuration files
+- **tmux**: Tmux terminal multiplexer configuration files
