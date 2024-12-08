@@ -7,6 +7,8 @@ packages=()
 packages+=(fzf kitty stow tmux zoxide zsh)
 # tmux
 packages+=(tmux)
+# vscode
+packages+=(visual-studio-code-bin)
 
 # Install dependencies
 if ! yay -Q "${packages[@]}" >/dev/null; then
@@ -26,3 +28,21 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
 fi
 stow tmux
 ~/.tmux/plugins/tpm/scripts/install_plugins.sh
+
+# vscode
+extensions=(
+    "catppuccin.catppuccin-vsc"
+    "eamodio.gitlens"
+    "esbenp.prettier-vscode"
+    "github.copilot-chat"
+    "github.copilot"
+    "ms-python.vscode-pylance"
+    "pkief.material-icon-theme"
+)
+installed_extensions=$(code --list-extensions)
+for extension in "${extensions[@]}"; do
+    [[ $installed_extensions =~ $extension ]] && continue
+    code --install-extension "$extension"
+done
+
+stow vscode
