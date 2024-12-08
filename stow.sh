@@ -9,6 +9,8 @@ packages+=(fzf kitty stow tmux zoxide zsh)
 packages+=(tmux)
 # vscode
 packages+=(visual-studio-code-bin)
+# kitty
+packages+=(kitty)
 
 # Install dependencies
 yay -S --needed "${packages[@]}"
@@ -40,3 +42,6 @@ for extension in "${extensions[@]}"; do
 done
 
 stow vscode
+
+# kitty
+stow kitty
