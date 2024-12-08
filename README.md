@@ -30,3 +30,4 @@ A repository for managing and deploying personal configuration files using GNU S
 
 - **zsh**: Zsh shell configuration files
 - **tmux**: Tmux terminal multiplexer configuration files
+- **vscode**: Visual Studio Code configuration files
