@@ -11,6 +11,8 @@ packages+=(tmux)
 packages+=(visual-studio-code-bin)
 # kitty
 packages+=(kitty)
+# kanata
+packages+=(kanata)
 
 # Install dependencies
 yay -S --needed "${packages[@]}"
@@ -45,3 +47,23 @@ stow vscode
 
 # kitty
 stow kitty
+
+# kanata
+stow kanata
+
+sudo groupadd uinput
+sudo usermod -aG input $USER
+sudo usermod -aG uinput $USER
+
+udev_rule='KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"'
+udev_file='/etc/udev/rules.d/99-input.rules'
+if ! grep -q "$udev_rule" "$udev_file"; then
+    sudo bash -c "echo '$udev_rule' >> $udev_file"
+fi
+
+sudo udevadm control --reload-rules && sudo udevadm trigger
+sudo modprobe uinput
+
+systemctl --user daemon-reload
+systemctl --user enable kanata.service
+systemctl --user start kanata.service
