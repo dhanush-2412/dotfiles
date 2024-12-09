@@ -32,3 +32,4 @@ A repository for managing and deploying personal configuration files using GNU S
 - **tmux**: Tmux terminal multiplexer configuration files
 - **vscode**: Visual Studio Code configuration files
 - **kitty**: Kitty terminal emulator configuration files
+- **kanata**: Kanata keyboard remapping configuration files
