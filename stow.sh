@@ -4,7 +4,7 @@
 packages=()
 
 # zsh
-packages+=(fzf kitty stow tmux zoxide zsh)
+packages+=(bat fzf kitty less stow tmux zoxide zsh)
 # tmux
 packages+=(tmux)
 # vscode

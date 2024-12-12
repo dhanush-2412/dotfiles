@@ -24,17 +24,20 @@ load() {
     git clone --depth=1 "$repo_url" "$target_dir"
 }
 
+download_file() {
+    local file_url=$1
+    local target_file=$2
+
+    [ -f "$target_file" ] && return 1
+    mkdir -p "$(dirname "$target_file")"
+    curl -fsSL "$file_url" -o "$target_file"
+}
+
 snippet() {
     local file_url=$1
-    local target_dir=${2:-"${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins"}
-    local file_name=$(basename "$file_url")
-    local target_file="$target_dir/$file_name"
+    local target_file=${2:-"${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/$(basename "$file_url")"}
 
-    if [ ! -f "$target_file" ]; then
-        mkdir -p "$target_dir"
-        curl -fsSL "$file_url" -o "$target_file"
-    fi
-    
+    download_file "$file_url" "$target_file"
     source "$target_file"
 }
 
@@ -185,6 +188,10 @@ zstyle ':fzf-tab:*' fzf-flags ${(z)FZF_DEFAULT_OPTS}
 export EDITOR=nvim
 export VISUAL=nvim
 
+# Bat configuration
+download_file "https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mocha.tmTheme" "$(bat --config-dir)/themes/Catppuccin Mocha.tmTheme" && bat cache --build
+export BAT_THEME="Catppuccin Mocha"
+alias cat="bat"
 
 clear-screen() {
   local precmd
