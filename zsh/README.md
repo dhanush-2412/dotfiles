@@ -7,7 +7,7 @@ Zsh Configuration with [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) and the [
 1. **Install all dependencies**:
 
    ```bash
-   yay -S bat fzf kitty less stow tmux zoxide zsh
+   yay -S bat eza fzf kitty less stow tmux zoxide zsh
    ```
 
 2. **Create symlinks using stow**:
