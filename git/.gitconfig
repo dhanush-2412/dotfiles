@@ -1,0 +1,38 @@
+# This is Git's per-user configuration file.
+[user]
+	email = dhanushshetty2412@gmail.com
+	name = Dhanush Shetty
+[credential "https://github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential
+[init]
+	defaultBranch = main
+[core]
+	editor = code --wait
+    pager = delta
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[interactive]
+    diffFilter = delta --color-only
+[include]
+	path = ~/.config/delta/catppuccin.gitconfig
+[delta]
+    navigate = true
+    dark = true
+	hyperlinks = true
+    hyperlinks-file-link-format = "vscode://file/{path}:{line}"
+	features = catppuccin-mocha
+[merge]
+    conflictstyle = zdiff3
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

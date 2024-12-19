@@ -13,6 +13,8 @@ packages+=(visual-studio-code-bin)
 packages+=(kitty)
 # kanata
 packages+=(kanata)
+# git
+packages+=(git git-delta github-cli github-desktop-bin gitkraken lazygit)
 
 # Install dependencies
 if ! yay -Q "${packages[@]}" >/dev/null; then
@@ -76,3 +78,6 @@ if ! systemctl --user is-enabled kanata.service >/dev/null 2>&1; then
     systemctl --user enable kanata.service
     systemctl --user start kanata.service
 fi
+
+# git
+stow git

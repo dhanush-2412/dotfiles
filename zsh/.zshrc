@@ -202,6 +202,11 @@ download_file "https://github.com/catppuccin/bat/raw/main/themes/Catppuccin%20Mo
 export BAT_THEME="Catppuccin Mocha"
 alias cat="bat"
 
+# Git Tools Configuration
+download_file "https://raw.githubusercontent.com/catppuccin/delta/refs/heads/main/catppuccin.gitconfig" "$HOME/.config/delta/catppuccin.gitconfig"
+download_file "https://raw.githubusercontent.com/catppuccin/lazygit/refs/heads/main/themes/mocha/blue.yml" $(lazygit --print-config-dir)/config.yml
+download_file "https://raw.githubusercontent.com/catppuccin/gitkraken/refs/heads/main/themes/catppuccin-mocha.jsonc" "$HOME/.gitkraken/themes/catppuccin-mocha.jsonc"
+
 clear-screen() {
   local precmd
   for precmd in $precmd_functions; do

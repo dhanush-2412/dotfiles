@@ -33,3 +33,4 @@ A repository for managing and deploying personal configuration files using GNU S
 - **vscode**: Visual Studio Code configuration files
 - **kitty**: Kitty terminal emulator configuration files
 - **kanata**: Kanata keyboard remapping configuration files
+- **git**: Git tools configuration files
