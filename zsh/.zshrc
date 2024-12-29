@@ -142,6 +142,7 @@ zstyle ':omz:plugins:eza' 'header' yes
 zstyle ':omz:plugins:eza' 'show-group' no
 zstyle ':omz:plugins:eza' 'icons' yes
 zstyle ':omz:plugins:eza' 'hyperlink' yes
+alias tree="ls --tree --git-ignore"
 
 source $ZSH/oh-my-zsh.sh
 
